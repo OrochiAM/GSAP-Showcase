@@ -1,0 +1,19 @@
+<svg width="255" height="260" viewBox="0 0 255 260" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect x="72.4531" y="74.9531" width="110" height="110" rx="13.5" fill="url(#paint0_radial_387_10)" stroke="black" stroke-width="3"/>
+<g id="Repeat group 1_inner" data-figma-trr="r8u6.2-0f">
+<rect x="120" y="6.1001" width="15" height="37" rx="4.5" fill="#FF7B00" stroke="black" stroke-width="3"/>
+</g>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(129.268 -52.08) rotate(45)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(257.5 2.50001) rotate(90)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(309.58 131.768) rotate(135)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(255 260) rotate(-180)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(125.732 312.08) rotate(-135)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(-2.5 257.5) rotate(-90)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(-54.58 128.232) rotate(-45)"/>
+<defs>
+<radialGradient id="paint0_radial_387_10" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(127.453 129.953) rotate(90) scale(53.5)">
+<stop offset="0.254808" stop-color="#FFDF61"/>
+<stop offset="1" stop-color="#FF7B00"/>
+</radialGradient>
+</defs>
+</svg>
