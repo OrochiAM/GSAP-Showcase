@@ -5,9 +5,9 @@
   --blue: #d8efff;
   --sky: linear-gradient(
     to bottom,
-    #78c9ff 0%,
-    #9edcff 25%,
-    #d6f2ff 60%,
+    #5bbfff 0%,
+    #9dd6ff 25%,
+    #d6eeff 60%,
     #ffffff00 100%
   );
 }
@@ -23,6 +23,7 @@ body {
   height: 400vh;
   background-size: 40px 40px;
   background-image: linear-gradient(to right, var(--blue) 1px, transparent 1px), linear-gradient(to bottom, var(--blue) 1px, transparent 1px);
+  overflow-x: hidden;
 }
 
 a {
@@ -46,7 +47,7 @@ a:hover::before {
 }
 
 .dropshadow {
-  filter: drop-shadow(2px 3px 0 var(--black));
+  filter: drop-shadow(3px 4px 0 var(--black));
 }
 
 .textshadow {
@@ -63,6 +64,7 @@ header {
   width: 100%;
   height: 100vh;
   background-image: var(--sky);
+  position: relative;
 }
 header nav {
   display: flex;
@@ -73,8 +75,9 @@ header nav {
   top: 0;
   width: 100%;
   padding-top: 1em;
-  background-image: linear-gradient(#78c9ff 5%, rgba(120, 201, 255, 0.4196078431) 60%, rgba(250, 251, 252, 0));
+  background-image: linear-gradient(#5bbfff 0%, rgba(91, 191, 255, 0.6666666667) 30%, rgba(250, 251, 252, 0));
   height: 200px;
+  z-index: 10000;
 }
 header nav .sun {
   height: 200px;
@@ -86,6 +89,7 @@ header nav .logo {
   line-height: 0.67;
   margin-bottom: 0.8em;
   text-align: center;
+  will-change: transform;
 }
 header nav ul {
   display: flex;
@@ -112,4 +116,12 @@ header section p {
   width: 40%;
   text-align: center;
   line-height: 0.8;
+  position: relative;
+  z-index: 1000;
+}
+header .cloud {
+  width: 350px;
+  position: absolute;
+  left: -360px;
+  bottom: 0;
 }/*# sourceMappingURL=style.css.map */
