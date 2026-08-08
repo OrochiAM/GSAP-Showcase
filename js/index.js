@@ -1,3 +1,13 @@
+gsap.registerPlugin(
+  ScrollTrigger,
+  ScrollToPlugin,
+  MotionPathPlugin,
+  Draggable,
+  InertiaPlugin,
+  SplitText,
+  TextPlugin,
+);
+
 // NAVBAR
 
 const tlNavBar = gsap.timeline({
@@ -13,13 +23,13 @@ tlNavBar
   .to('nav', {
     height: 120,
   })
-  .to('.sun', { height: 120 }, '<');
+  .to('.sun', { scale: 0.6 }, '<');
 
 // SUNCE
 const tlSun = gsap.timeline({
   scrollTrigger: {
     pin: true,
-    scrub: 1,
+    scrub: 0,
   },
 });
 
@@ -34,7 +44,7 @@ const getRandom = (min, max) =>
 const oblaci = document.querySelectorAll('.cloud');
 
 const randomOblaciPosition = () =>
-  oblaci.forEach((o) => (o.style.bottom = `${getRandom(50, 200)}px`));
+  oblaci.forEach((o) => (o.style.bottom = `${getRandom(70, 200)}px`));
 
 let vw = window.innerWidth;
 tl = gsap.timeline({ repeat: -1 });
@@ -57,3 +67,23 @@ tl.to('.cloud', {
   },
   onStart: randomOblaciPosition,
 });
+
+// LOAD ANIMACIJA
+
+const mainHeaderSplit = SplitText.create('.header', { type: 'lines' });
+
+const loadTimeline = gsap.timeline();
+
+loadTimeline
+  .from('nav', {
+    y: -200,
+    opacity: 0,
+    duration: 1,
+  })
+  .from(mainHeaderSplit.lines, {
+    y: 30,
+    opacity: 0,
+    stagger: 0.7,
+    ease: 'back',
+    scale: 0.8,
+  });

@@ -92,6 +92,7 @@ header {
 
     .sun {
       height: 200px;
+      will-change: transform;
     }
 
     .logo {
@@ -128,7 +129,7 @@ header {
     align-items: center;
     height: 40vh;
 
-    p {
+    h1 {
       font-size: 7rem;
       width: 40%;
       text-align: center;

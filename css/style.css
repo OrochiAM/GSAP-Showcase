@@ -117,7 +117,7 @@ header section {
   align-items: center;
   height: 40vh;
 }
-header section p {
+header section h1 {
   font-size: 7rem;
   width: 40%;
   text-align: center;
