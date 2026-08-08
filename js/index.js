@@ -34,7 +34,7 @@ const getRandom = (min, max) =>
 const oblaci = document.querySelectorAll('.cloud');
 
 const randomOblaciPosition = () =>
-  oblaci.forEach((o) => (o.style.bottom = `${getRandom(40, 200)}px`));
+  oblaci.forEach((o) => (o.style.bottom = `${getRandom(50, 200)}px`));
 
 let vw = window.innerWidth;
 tl = gsap.timeline({ repeat: -1 });

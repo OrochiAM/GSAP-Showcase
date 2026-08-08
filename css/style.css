@@ -3,6 +3,7 @@
   --white: #fff;
   --black: #000;
   --blue: #d8efff;
+  --border: ;
   --sky: linear-gradient(
     to bottom,
     #5bbfff 0%,
@@ -44,6 +45,10 @@ a::before {
 }
 a:hover::before {
   width: 100%;
+}
+
+h2 {
+  font-size: 4rem;
 }
 
 .dropshadow {
@@ -98,6 +103,7 @@ header nav ul {
   font-size: 1.75rem;
   position: absolute;
   right: 4em;
+  will-change: transform;
 }
 header nav ul a {
   color: var(--white);
@@ -124,4 +130,35 @@ header .cloud {
   position: absolute;
   left: -360px;
   bottom: 0;
+}
+
+.card-section {
+  width: 100%;
+  text-align: center;
+}
+.card-section .card:nth-child(1),
+.card-section .card:nth-child(3) {
+  transform: rotate(-15deg);
+}
+.card-section .card:nth-child(2),
+.card-section .card:nth-child(4) {
+  transform: rotate(15deg);
+}
+.card-section .cards {
+  display: flex;
+  justify-content: center;
+  gap: -20px;
+  padding: 3.5em 0;
+}
+.card-section .cards .card {
+  width: 250px;
+  height: 325px;
+  background-color: var(--white);
+  border: solid 3px;
+  border-radius: 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.card-section .cards .card:hover {
+  transform: scale(1.2);
 }/*# sourceMappingURL=style.css.map */

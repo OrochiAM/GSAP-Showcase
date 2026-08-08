@@ -4,7 +4,7 @@
   --white: #fff;
   --black: #000;
   --blue: #d8efff;
-
+  --border: ;
   --sky: linear-gradient(
     to bottom,
     #5bbfff 0%,
@@ -53,6 +53,10 @@ a {
   }
 }
 
+h2 {
+  font-size: 4rem;
+}
+
 .dropshadow {
   filter: drop-shadow(3px 4px 0 var(--black));
 }
@@ -85,6 +89,7 @@ header {
     background-image: linear-gradient(#5bbfff 0%, #5bbfffaa 30%, #fafbfc00);
     height: 200px;
     z-index: 10000;
+
     .sun {
       height: 200px;
     }
@@ -106,6 +111,7 @@ header {
       font-size: 1.75rem;
       position: absolute;
       right: 4em;
+      will-change: transform;
 
       a {
         color: var(--white);
@@ -137,5 +143,41 @@ header {
     position: absolute;
     left: -360px;
     bottom: 0;
+  }
+}
+
+.card-section {
+  width: 100%;
+  text-align: center;
+
+  .card:nth-child(1),
+  .card:nth-child(3) {
+    transform: rotate(-15deg);
+  }
+
+  .card:nth-child(2),
+  .card:nth-child(4) {
+    transform: rotate(15deg);
+  }
+
+  .cards {
+    display: flex;
+    justify-content: center;
+    gap: -20px;
+    padding: 3.5em 0;
+
+    .card {
+      width: 250px;
+      height: 325px;
+      background-color: var(--white);
+      border: solid 3px;
+      border-radius: 20px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
   }
 }
