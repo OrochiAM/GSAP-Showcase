@@ -1,0 +1,21 @@
+<svg width="216" height="216" viewBox="0 0 216 216" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Repeat group 1_inner" data-figma-trr="r10u1.1-0f">
+<path d="M107.829 3.27832C112.735 3.27838 117.111 5.19586 120.346 10.3652C123.654 15.6519 125.828 24.4413 125.828 38.2783C125.828 51.9372 121.038 67.8497 116.179 80.4473C113.757 86.7249 111.336 92.1385 109.52 95.9814C108.87 97.3563 108.294 98.5278 107.828 99.4668C107.362 98.5278 106.787 97.3561 106.138 95.9814C104.321 92.1385 101.899 86.7249 99.4775 80.4473C94.6182 67.8497 89.8281 51.9371 89.8281 38.2783C89.8281 24.4412 92.0028 15.6519 95.3115 10.3652C98.5469 5.19576 102.923 3.27832 107.829 3.27832Z" fill="white" stroke="black" stroke-width="3"/>
+</g>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(83.9729 -42.7863) rotate(36)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(177.058 -28.0432) rotate(72)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(243.699 38.5981) rotate(108)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(258.442 131.683) rotate(144)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(215.656 215.656) rotate(-180)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(131.683 258.442) rotate(-144)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(38.5981 243.699) rotate(-108)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(-28.0432 177.058) rotate(-72)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(-42.7863 83.9729) rotate(-36)"/>
+<circle cx="107.5" cy="108.5" r="21" fill="url(#paint0_radial_501_42)" stroke="black" stroke-width="3"/>
+<defs>
+<radialGradient id="paint0_radial_501_42" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(107.5 108.5) rotate(90) scale(22.5)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#FFE056"/>
+</radialGradient>
+</defs>
+</svg>
