@@ -266,10 +266,16 @@ tlButton
   });
 
 const flowerButton = document.querySelector('.flower-button');
+const replayButton = document.querySelector('.replay-button');
 
 let isPlaying = false;
+let isFirst = false;
 
 flowerButton.addEventListener('click', () => {
+  if (!isFirst) {
+    replayButton.disabled = false;
+  }
+
   if (!isPlaying) {
     tlButton.play();
     flowerButton.children[0].src = 'images/pause.svg';
@@ -281,4 +287,8 @@ flowerButton.addEventListener('click', () => {
   }
 
   isPlaying = !isPlaying;
+});
+
+replayButton.addEventListener('click', () => {
+  tlButton.restart();
 });
