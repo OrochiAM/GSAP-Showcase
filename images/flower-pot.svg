@@ -4,12 +4,12 @@
 <rect x="1.5" y="126.01" width="189" height="37" rx="8.5" fill="url(#paint1_radial_503_6)" stroke="black" stroke-width="3"/>
 <defs>
 <radialGradient id="paint0_radial_503_6" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(96 198.51) rotate(90) scale(64 91)">
-<stop stop-color="#FFF4C8"/>
-<stop offset="1" stop-color="#FFC258"/>
+<stop stop-color="#FFEFAD"/>
+<stop offset="1" stop-color="#FF9858"/>
 </radialGradient>
 <radialGradient id="paint1_radial_503_6" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(96 144.51) rotate(90) scale(20 96)">
-<stop stop-color="#FFF4C8"/>
-<stop offset="1" stop-color="#FFC258"/>
+<stop stop-color="#FFEFAD"/>
+<stop offset="1" stop-color="#FF9858"/>
 </radialGradient>
 </defs>
 </svg>

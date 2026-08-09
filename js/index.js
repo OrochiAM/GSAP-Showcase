@@ -120,6 +120,7 @@ gsap.set('.ball', { x: 500, y: 200 });
 Draggable.create('.ball', {
   bounds: '.canvas',
   inertia: true,
+
   onThrowComplete: function () {
     const canvas = document.querySelector('.canvas');
     const ball = this.target;
@@ -187,10 +188,6 @@ addEventListener('resize', () => {
   ratio = drag_width / (slider_width - thumb_width);
   gsap.set(thumb, { x: (-1 * this.x) / ratio });
   gsap.set(track, { x: -1 * this.x * ratio });
-  console.log('car: ' + carousel_width);
-  console.log('drag: ' + drag_width);
-  console.log('track: ' + track_width);
-  console.log('ratio: ' + ratio);
 
   Draggable.get(track).kill();
 
@@ -202,8 +199,6 @@ addEventListener('resize', () => {
     },
     onDrag: function () {
       gsap.set(thumb, { x: (-1 * this.x) / ratio });
-      console.log(drag_width);
-      console.log(this.x);
     },
     onThrowUpdate() {
       gsap.set(thumb, { x: (-1 * this.x) / ratio });
@@ -219,8 +214,6 @@ let drag_carousel = Draggable.create(track, {
   },
   onDrag: function () {
     gsap.set(thumb, { x: (-1 * this.x) / ratio });
-    console.log(drag_width);
-    console.log(this.x);
   },
   onThrowUpdate() {
     gsap.set(thumb, { x: (-1 * this.x) / ratio });
