@@ -72,19 +72,67 @@ tl.to('.cloud', {
 
 const mainHeaderSplit = SplitText.create('.header', { type: 'lines' });
 
-const loadTimeline = gsap.timeline();
+const loadTimeline = gsap.timeline({ ease: 'power4' });
 
 loadTimeline
-  .from('.logo, .sun, ul', {
+  .from('.sun', {
     y: -200,
     opacity: 0,
     duration: 1,
     stagger: 0,
   })
-  .from(mainHeaderSplit.lines, {
-    y: 30,
+  .from('.logo', {
+    y: -20,
     opacity: 0,
-    stagger: 0.7,
-    ease: 'back',
-    scale: 0.8,
-  });
+  })
+  .from('nav > ul > li', {
+    y: -20,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2,
+  })
+  .from(
+    mainHeaderSplit.lines,
+    {
+      y: 30,
+      opacity: 0,
+      stagger: 0.7,
+      ease: 'back',
+      scale: 0.8,
+    },
+    '-=0.3',
+  );
+
+// DRAGGABLE
+
+Draggable.create('.flower-top', {
+  type: 'rotation',
+  inertia: true,
+});
+
+Draggable.create('.car', {
+  type: 'x',
+  bounds: '.canvas',
+});
+
+gsap.set('.ball', { x: 500, y: 250 });
+
+Draggable.create('.ball', {
+  bounds: '.canvas',
+  inertia: true,
+  onThrowComplete: function () {
+    const canvas = document.querySelector('.canvas');
+    const ball = this.target;
+
+    const canvasBottom = canvas.getBoundingClientRect().bottom - 50;
+    const ballBottom = ball.getBoundingClientRect().bottom;
+
+    const distanceToFloor = canvasBottom - ballBottom - 3;
+
+    gsap.to(ball, {
+      y: `+=${distanceToFloor}`,
+      duration: 0.8,
+      ease: 'bounce.out',
+    });
+  },
+});
