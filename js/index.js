@@ -115,7 +115,7 @@ Draggable.create('.car', {
   bounds: '.canvas',
 });
 
-gsap.set('.ball', { x: 500, y: 250 });
+gsap.set('.ball', { x: 500, y: 200 });
 
 Draggable.create('.ball', {
   bounds: '.canvas',
@@ -134,5 +134,106 @@ Draggable.create('.ball', {
       duration: 0.8,
       ease: 'bounce.out',
     });
+  },
+});
+
+// CAROUSEL
+let emojis = [
+  '🌸',
+  '🌻',
+  '🌼',
+  '🌷',
+  '💐',
+  '🦄',
+  '♥️',
+  '🌲',
+  '🐍',
+  '🐢',
+  '🦚',
+  '🍉',
+  '🍓',
+  '🍒',
+  '🍄',
+];
+
+const carouselCards = document.querySelectorAll('.track .card');
+
+carouselCards.forEach((c, i) => {
+  c.children[0].innerHTML = `<p>${emojis[Math.floor(Math.random() * emojis.length)]}</p>`;
+  c.children[1].innerHTML = `Kartica #${i} `;
+});
+
+let carousel_width = document.querySelector('.slider').offsetWidth;
+let sections = gsap.utils.toArray('.track .card');
+let track = document.querySelector('.track');
+let track_width = sections[0].offsetWidth * sections.length;
+let drag_width = track_width - carousel_width;
+let slider = document.querySelector('.scroller');
+let slider_width = slider.offsetWidth;
+let thumb = slider.querySelector('.thumb');
+let thumb_width = thumb.offsetWidth;
+let ratio = drag_width / (slider_width - thumb_width);
+
+addEventListener('resize', () => {
+  carousel_width = document.querySelector('.slider').offsetWidth;
+  sections = gsap.utils.toArray('.track .card');
+  track = document.querySelector('.track');
+  track_width = sections[0].offsetWidth * sections.length;
+  drag_width = track_width - carousel_width;
+  slider = document.querySelector('.scroller');
+  slider_width = slider.offsetWidth;
+  thumb = slider.querySelector('.thumb');
+  thumb_width = thumb.offsetWidth;
+  ratio = drag_width / (slider_width - thumb_width);
+  gsap.set(thumb, { x: (-1 * this.x) / ratio });
+  gsap.set(track, { x: -1 * this.x * ratio });
+  console.log('car: ' + carousel_width);
+  console.log('drag: ' + drag_width);
+  console.log('track: ' + track_width);
+  console.log('ratio: ' + ratio);
+
+  Draggable.get(track).kill();
+
+  drag_carousel = Draggable.create(track, {
+    type: 'x',
+    bounds: {
+      minX: 0,
+      maxX: -1 * drag_width,
+    },
+    onDrag: function () {
+      gsap.set(thumb, { x: (-1 * this.x) / ratio });
+      console.log(drag_width);
+      console.log(this.x);
+    },
+    onThrowUpdate() {
+      gsap.set(thumb, { x: (-1 * this.x) / ratio });
+    },
+  });
+});
+
+let drag_carousel = Draggable.create(track, {
+  type: 'x',
+  bounds: {
+    minX: 0,
+    maxX: -1 * drag_width,
+  },
+  onDrag: function () {
+    gsap.set(thumb, { x: (-1 * this.x) / ratio });
+    console.log(drag_width);
+    console.log(this.x);
+  },
+  onThrowUpdate() {
+    gsap.set(thumb, { x: (-1 * this.x) / ratio });
+  },
+});
+
+let drag_thumb = Draggable.create(thumb, {
+  type: 'x',
+  bounds: slider,
+  onDrag: function () {
+    gsap.set(track, { x: -1 * this.x * ratio });
+  },
+  onThrowUpdate() {
+    gsap.set(track, { x: -1 * this.x * ratio });
   },
 });
