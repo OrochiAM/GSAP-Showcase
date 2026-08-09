@@ -230,3 +230,55 @@ let drag_thumb = Draggable.create(thumb, {
     gsap.set(track, { x: -1 * this.x * ratio });
   },
 });
+
+// FLOWERS
+
+const flowersSplit = SplitText.create('.flowers', { type: 'chars' });
+console.log(flowersSplit);
+
+const flowerSectionWidth =
+  document.querySelector('.flower-section').offsetWidth;
+
+const tlButton = gsap.timeline({ paused: true });
+
+tlButton
+  .to(flowersSplit.chars, {
+    yPercent: -115,
+    stagger: {
+      each: 0.1,
+      from: 'end',
+    },
+  })
+  .to('.bee', {
+    motionPath: {
+      path: [
+        { x: 0, y: 0 },
+        { x: -flowerSectionWidth * 0.25, y: -50 },
+        { x: -flowerSectionWidth * 0.5, y: 35 },
+        { x: -flowerSectionWidth * 0.75, y: -40 },
+        { x: -flowerSectionWidth - 170, y: 40 },
+      ],
+      curviness: 1.5,
+    },
+    duration: 4,
+    repeat: -1,
+    ease: 'none',
+  });
+
+const flowerButton = document.querySelector('.flower-button');
+
+let isPlaying = false;
+
+flowerButton.addEventListener('click', () => {
+  if (!isPlaying) {
+    tlButton.play();
+    flowerButton.children[0].src = 'images/pause.svg';
+    flowerButton.children[1].innerHTML = 'PAUSE';
+  } else {
+    tlButton.pause();
+    flowerButton.children[0].src = 'images/play.svg';
+    flowerButton.children[1].innerHTML = 'PLAY';
+  }
+
+  isPlaying = !isPlaying;
+});

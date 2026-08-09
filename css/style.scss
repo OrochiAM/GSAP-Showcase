@@ -338,6 +338,7 @@ header {
 }
 
 .flower-section {
+  overflow: hidden;
   height: 600px;
   width: 100%;
   background-color: #9ed7ff;
@@ -384,16 +385,20 @@ header {
   }
 
   .bee {
-    top: 100px;
-    right: 0;
+    position: absolute;
+    top: 350px;
+    right: -190px;
+    z-index: 2;
+    font-size: 7rem;
   }
 
   .flowers {
-    bottom: 0;
+    bottom: -170px;
     letter-spacing: -80px;
     line-height: 0.9;
     white-space: nowrap;
     margin: 0;
     padding: 0;
+    margin-right: 25px;
   }
 }
