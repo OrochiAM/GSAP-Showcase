@@ -22,7 +22,6 @@
 }
 
 body {
-  height: 400vh;
   background-size: 40px 40px;
   background-image: linear-gradient(to right, var(--blue) 1px, transparent 1px), linear-gradient(to bottom, var(--blue) 1px, transparent 1px);
   overflow-x: hidden;
@@ -174,7 +173,7 @@ header .cloud {
   background-color: #9ed7ff;
   border-top: solid 3px;
   border-bottom: solid 3px;
-  margin: 4em 0;
+  margin: 8em 0;
   padding: 2em 0 1em 0;
 }
 .carousel-section h2 {
@@ -242,6 +241,9 @@ header .cloud {
   background-color: #000;
 }
 
+.draggable {
+  margin: 8em 0;
+}
 .draggable h2 {
   margin-bottom: 0.2em;
 }
@@ -301,6 +303,55 @@ header .cloud {
   pointer-events: none;
 }
 
+.bar-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.bar-section .bar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+.bar-section .bar-container .bar-whole:nth-child(2) .fill {
+  background-color: #9dd6ff;
+}
+.bar-section .bar-container .bar-whole:nth-child(3) .fill {
+  background-color: #b8a0ff;
+}
+.bar-section .bar-container .bar-whole:nth-child(4) .fill {
+  background-color: #ffb347;
+}
+.bar-section .bar-container .bar-whole {
+  display: flex;
+  gap: 1em;
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.bar-section .bar-container .bar-whole p {
+  font-family: "Elms Sans";
+}
+.bar-section .bar-container .bar-whole .bar {
+  position: relative;
+}
+.bar-section .bar-container .bar-whole .bar .background {
+  border: solid 3px;
+  width: 400px;
+  height: 40px;
+  background-color: #eee;
+  border-radius: 5px;
+}
+.bar-section .bar-container .bar-whole .bar .fill {
+  height: 34px;
+  width: 40%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border-radius: 2px;
+}
+
 .flower-section {
   overflow: hidden;
   height: 600px;
@@ -308,7 +359,7 @@ header .cloud {
   background-color: #9ed7ff;
   border-top: solid 3px;
   border-bottom: solid 3px;
-  margin: 4em 0;
+  margin: 8em 0;
   padding: 2em 0 1em 0;
   position: relative;
   display: flex;
@@ -362,7 +413,7 @@ header .cloud {
   position: absolute;
   top: 350px;
   right: -190px;
-  z-index: 2;
+  z-index: 3;
   font-size: 7rem;
 }
 .flower-section .flowers {
@@ -373,4 +424,5 @@ header .cloud {
   margin: 0;
   padding: 0;
   margin-right: 25px;
+  position: absolute;
 }/*# sourceMappingURL=style.css.map */
