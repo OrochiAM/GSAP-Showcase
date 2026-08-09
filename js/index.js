@@ -75,10 +75,11 @@ const mainHeaderSplit = SplitText.create('.header', { type: 'lines' });
 const loadTimeline = gsap.timeline();
 
 loadTimeline
-  .from('nav', {
+  .from('.logo, .sun, ul', {
     y: -200,
     opacity: 0,
     duration: 1,
+    stagger: 0,
   })
   .from(mainHeaderSplit.lines, {
     y: 30,
