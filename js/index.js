@@ -231,6 +231,37 @@ let drag_thumb = Draggable.create(thumb, {
   },
 });
 
+// BARS
+gsap.from('.fill', {
+  width: 0,
+  transformOrigin: 'left',
+  duration: 1,
+  stagger: 0.5,
+  opacity: 0,
+  scrollTrigger: {
+    trigger: '.fill',
+    toggleActions: 'play none none none',
+  },
+});
+
+document.querySelectorAll('.number').forEach((n) => {
+  const obj = { val: 0 };
+  const target = parseFloat(n.dataset.target);
+
+  gsap.to(obj, {
+    val: target,
+    duration: 2,
+    ease: 'power1.out',
+    scrollTrigger: {
+      trigger: n,
+      toggleActions: 'play none none none',
+    },
+    onUpdate() {
+      n.textContent = Math.round(obj.val) + '%';
+    },
+  });
+});
+
 // FLOWERS
 
 const flowersSplit = SplitText.create('.flowers', { type: 'chars' });
