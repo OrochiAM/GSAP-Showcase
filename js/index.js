@@ -197,9 +197,11 @@ addEventListener('resize', () => {
       minX: 0,
       maxX: -1 * drag_width,
     },
+
     onDrag: function () {
       gsap.set(thumb, { x: (-1 * this.x) / ratio });
     },
+
     onThrowUpdate() {
       gsap.set(thumb, { x: (-1 * this.x) / ratio });
     },
@@ -212,9 +214,11 @@ let drag_carousel = Draggable.create(track, {
     minX: 0,
     maxX: -1 * drag_width,
   },
+
   onDrag: function () {
     gsap.set(thumb, { x: (-1 * this.x) / ratio });
   },
+
   onThrowUpdate() {
     gsap.set(thumb, { x: (-1 * this.x) / ratio });
   },
@@ -223,21 +227,26 @@ let drag_carousel = Draggable.create(track, {
 let drag_thumb = Draggable.create(thumb, {
   type: 'x',
   bounds: slider,
+
   onDrag: function () {
     gsap.set(track, { x: -1 * this.x * ratio });
   },
+
   onThrowUpdate() {
     gsap.set(track, { x: -1 * this.x * ratio });
   },
 });
 
 // BARS
+
 gsap.from('.fill', {
   width: 0,
   transformOrigin: 'left',
   duration: 1,
   stagger: 0.5,
   opacity: 0,
+  ease: 'power4',
+
   scrollTrigger: {
     trigger: '.fill',
     toggleActions: 'play none none none',
@@ -252,10 +261,12 @@ document.querySelectorAll('.number').forEach((n) => {
     val: target,
     duration: 2,
     ease: 'power1.out',
+
     scrollTrigger: {
       trigger: n,
       toggleActions: 'play none none none',
     },
+
     onUpdate() {
       n.textContent = Math.round(obj.val) + '%';
     },
@@ -322,4 +333,7 @@ flowerButton.addEventListener('click', () => {
 
 replayButton.addEventListener('click', () => {
   tlButton.restart();
+  flowerButton.children[0].src = 'images/pause.svg';
+  flowerButton.children[1].innerHTML = 'PAUSE';
+  isPlaying = true;
 });
