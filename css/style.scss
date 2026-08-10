@@ -577,4 +577,12 @@ footer {
   height: 150px;
   background-color: #9dd6ff;
   border-top: solid 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-family: 'Elms Sans';
+    font-size: 1.5em;
+  }
 }
