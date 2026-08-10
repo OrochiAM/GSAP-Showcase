@@ -31,6 +31,16 @@ body {
   overflow-x: hidden;
 }
 
+button {
+  user-select: none;
+}
+
+p::selection,
+h2::selection {
+  background-color: #5bbfff;
+  color: #fff;
+}
+
 a {
   text-decoration: none;
   position: relative;
@@ -175,13 +185,20 @@ header {
       background-color: var(--white);
       border: solid 3px;
       border-radius: 20px;
-      transition-duration: 0.4s;
       cursor: pointer;
       position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-      &:hover {
-        z-index: 2;
-        transform: scale(1.2);
+      .emoji {
+        font-size: 5em;
+      }
+
+      .text {
+        font-family: 'Elms Sans';
+        font-size: 1.7em;
       }
     }
   }
@@ -307,7 +324,7 @@ header {
       z-index: 99999999;
       border: solid 3px;
       border-radius: 50px;
-      background-image: radial-gradient(#ffa492, #ff3535);
+      background-image: radial-gradient(#ffa492, red);
     }
 
     .car {
@@ -400,7 +417,7 @@ header {
         .fill {
           height: 40px;
           position: absolute;
-          border-radius: 3px;
+          border-radius: 5px;
           border: solid 3px;
         }
       }
@@ -491,4 +508,73 @@ header {
     margin-right: 25px;
     position: absolute;
   }
+}
+
+.ja-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 8em 0;
+  position: relative;
+
+  .ja-slika {
+    width: 400px;
+    height: 500px;
+    border: solid 3px;
+    position: relative;
+    border-radius: 20px;
+    background-color: #fff;
+    margin: 90px 0 50px 0;
+    box-shadow: 3px 4px 0 var(--black);
+
+    img {
+      position: absolute;
+      z-index: 1;
+    }
+
+    .ja {
+      width: 100%;
+      bottom: -41px;
+      border-radius: 2px;
+      clip-path: inset(0 0 40px 0);
+    }
+
+    .cloud-slika {
+      transform: scaleX(-1);
+      width: 350px;
+    }
+
+    > img:nth-child(1) {
+      top: -75px;
+      right: -150px;
+    }
+
+    > img:nth-child(3) {
+      bottom: -50px;
+      left: -120px;
+    }
+
+    .bubble-slika {
+      width: 300px;
+      position: absolute;
+      z-index: 2;
+      left: -230px;
+      top: -20px;
+    }
+  }
+
+  p {
+    text-align: center;
+    font-size: 4rem;
+    line-height: 1;
+    margin-top: 0.3em;
+  }
+}
+
+footer {
+  width: 100%;
+  height: 150px;
+  background-color: #9dd6ff;
+  border-top: solid 3px;
 }

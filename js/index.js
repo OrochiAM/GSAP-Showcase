@@ -103,6 +103,30 @@ loadTimeline
     '-=0.3',
   );
 
+// KARTICE
+
+document.querySelectorAll('.cards .card').forEach((card, i) => {
+  const rotation = i % 2 === 0 ? -10 : 10;
+
+  card.addEventListener('mouseenter', () =>
+    gsap.to(card, { scale: 1.2, rotation: 0, zIndex: 2, duration: 0.3 }),
+  );
+  card.addEventListener('mouseleave', () =>
+    gsap.to(card, { scale: 1, rotation, zIndex: 1, duration: 0.3 }),
+  );
+});
+
+gsap.from('.cards .card', {
+  opacity: 0,
+  stagger: 0.3,
+  scale: 0.8,
+  scrollTrigger: {
+    start: 'top 70%',
+    trigger: '.cards',
+    toggleActions: 'play none none none',
+  },
+});
+
 // DRAGGABLE
 
 Draggable.create('.flower-top', {
@@ -336,4 +360,25 @@ replayButton.addEventListener('click', () => {
   flowerButton.children[0].src = 'images/pause.svg';
   flowerButton.children[1].innerHTML = 'PAUSE';
   isPlaying = true;
+});
+
+// MOJA SLIKA
+
+document.querySelectorAll('.cloud-slika').forEach((cloud, i) => {
+  gsap.to(cloud, {
+    y: -30,
+    x: -8,
+    duration: 2 + i * 0.4,
+    repeat: -1,
+    yoyo: true,
+    ease: 'sine.inOut',
+    delay: i * 0.7,
+    repeatDelay: 0,
+  });
+});
+
+gsap.from('.bubble-slika', {
+  opacity: 0,
+  duration: 2,
+  scrollTrigger: { trigger: '.bubble-slika', start: 'top 40%' },
 });
